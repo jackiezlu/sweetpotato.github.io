@@ -15,12 +15,10 @@
         var bIsWeiXin = sUserAgent.match(/micromessenger/i) == "micromessenger"  // 微信
         if(bIsAndroid){
            window.location.href="http://a.app.qq.com/o/simple.jsp?pkgname=com.meimarket.activity#opened";
-        }
-        if (bIsWeiXin) {
+        } else if (bIsIphoneOs && bIsWeiXin) {
             window.location.href="http://mp.weixin.qq.com/mp/redirect?url=" +
                 encodeURIComponent("https://itunes.apple.com/cn/app/mei-hui-shuo/id954962593?mt=8");
-        }
-        if(bIsIphoneOs){
+        } else if(bIsIphoneOs){
             window.location.href="https://itunes.apple.com/cn/app/mei-hui-shuo/id954962593?mt=8";
         } else {
             window.location.href="http://a.app.qq.com/o/simple.jsp?pkgname=com.meimarket.activity#opened";
